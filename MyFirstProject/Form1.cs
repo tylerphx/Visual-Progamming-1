@@ -21,5 +21,30 @@ namespace MyFirstProject
         {
 
         }
+   
+        private void spanishButton_Click(object sender, EventArgs e)
+        {
+            translationOutputLabel.Text = "Buenos Dias";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void italianButton_Click(object sender, EventArgs e)
+        {
+            translationOutputLabel.Text = "Buongiorno";
+        }
+
+        private void germanButton_Click(object sender, EventArgs e)
+        {
+            translationOutputLabel.Text = "Guten Morgen";
+        }
+
+        private void translationOutputLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
