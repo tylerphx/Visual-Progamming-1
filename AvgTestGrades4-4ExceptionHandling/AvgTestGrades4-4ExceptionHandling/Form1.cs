@@ -29,7 +29,7 @@ namespace AvgTestGrades4_4ExceptionHandling
                 double averageGrade;
                 //Calculates the average grade from the 3 test scores
                 averageGrade = (double.Parse(test1TextBox.Text) + double.Parse(test2TextBox.Text) + double.Parse(test3TextBox.Text)) / 3.0;
-                averageLabel.Text = averageGrade.ToString();
+                averageLabel.Text = averageGrade.ToString("n2");
             }
             catch (Exception ex)
             {
