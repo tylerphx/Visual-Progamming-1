@@ -45,6 +45,7 @@ namespace _3_5ChangeCounter
         {
             total += TWENTYFIVE_CENTS_VALUE;
             totalLabel.Text = total.ToString("c");
+
         }
 
         private void fiftyCentsPictureBox_Click(object sender, EventArgs e)
@@ -58,9 +59,6 @@ namespace _3_5ChangeCounter
             this.Close();
         }
 
-        private void fiveCentsPictureBox_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

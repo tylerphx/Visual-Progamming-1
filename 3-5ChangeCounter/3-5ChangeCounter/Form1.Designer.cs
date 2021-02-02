@@ -80,7 +80,7 @@
             this.instructionLabel.Location = new System.Drawing.Point(139, 9);
             this.instructionLabel.Name = "instructionLabel";
             this.instructionLabel.Size = new System.Drawing.Size(91, 13);
-            this.instructionLabel.TabIndex = 4;
+            this.instructionLabel.TabIndex = 0;
             this.instructionLabel.Text = "Click the coins";
             // 
             // outputDescriptionLabel
@@ -89,7 +89,7 @@
             this.outputDescriptionLabel.Location = new System.Drawing.Point(373, 202);
             this.outputDescriptionLabel.Name = "outputDescriptionLabel";
             this.outputDescriptionLabel.Size = new System.Drawing.Size(31, 13);
-            this.outputDescriptionLabel.TabIndex = 5;
+            this.outputDescriptionLabel.TabIndex = 1;
             this.outputDescriptionLabel.Text = "Total";
             // 
             // totalLabel
@@ -98,15 +98,16 @@
             this.totalLabel.Location = new System.Drawing.Point(337, 215);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(100, 23);
-            this.totalLabel.TabIndex = 6;
+            this.totalLabel.TabIndex = 2;
             this.totalLabel.Click += new System.EventHandler(this.totalLabel_Click);
             // 
             // exitButton
             // 
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.Location = new System.Drawing.Point(142, 425);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 7;
+            this.exitButton.TabIndex = 3;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -125,6 +126,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(463, 450);
             this.Controls.Add(this.fiftyCentsPictureBox);
             this.Controls.Add(this.exitButton);
