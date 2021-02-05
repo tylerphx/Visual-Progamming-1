@@ -36,10 +36,26 @@ namespace Fuel_Economy
         private void calculateButton_Click(object sender, EventArgs e)
         {
             double milesDrove; double gallonsUsed; double mpg;
-            milesDrove = double.Parse(milesDrivenTextBox.Text);
-            gallonsUsed = double.Parse(gallonsUsedTextBox.Text);
-            mpg = milesDrove / gallonsUsed;
-            outputLabel.Text = mpg.ToString();
+          
+            
+            if (double.TryParse(milesDrivenTextBox.Text, out milesDrove))
+            {
+                if (double.TryParse(gallonsUsedTextBox.Text, out gallonsUsed))
+                {
+                    milesDrove = double.Parse(milesDrivenTextBox.Text);
+                    gallonsUsed = double.Parse(gallonsUsedTextBox.Text);
+                    mpg = milesDrove / gallonsUsed;
+                    outputLabel.Text = mpg.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Error in the type of data input for gallons used. Please type a number.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error for miles driven");
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
