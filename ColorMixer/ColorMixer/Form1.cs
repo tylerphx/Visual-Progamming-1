@@ -18,14 +18,16 @@ namespace ColorMixer
         }
         private void convertButton_Click(object sender, EventArgs e)
         {
-            double userInputDistance;
+           
+        double userInputDistance;
             if (double.TryParse(distanceTextBox.Text, out userInputDistance))
             {
                 userInputDistance = double.Parse(distanceTextBox.Text);
                 int fromListBoxIndex = fromListBox.SelectedIndex;
                 int toListBoxIndex = toListBox.SelectedIndex;
 
-                if (fromListBoxIndex ==0 && toListBoxIndex ==0)
+                
+            if (fromListBoxIndex ==0 && toListBoxIndex ==0)
                 {
                         double inchesToInchesDistance = userInputDistance;
                         outputLabel.Text = inchesToInchesDistance.ToString();
@@ -72,6 +74,26 @@ namespace ColorMixer
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int x = 3;
+
+            switch (x)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Greater than 1");
+                        break;
+                    }
+                Cas
+                default:
+                    {
+                        MessageBox.Show("Less than 2");
+                        break;
+                    }
+            }
         }
     }
     }
