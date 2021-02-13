@@ -60,18 +60,19 @@ namespace Assignment2
                 {
                     hoursUsed = double.Parse(hoursUsedLabel.Text);
                     //This if statement checks to see if the user input is within the possible range of hours in a month, 
-                    //If above, it asks them to please input a valid number of hours. 
+                    //If above, it asks them to please input a valid number of hours, sets focus to the textbox, and clears all fields.
                     if (hoursUsed > 744)
                     {
-                        MessageBox.Show("Error, please input a valid number of hours.");
+                        MessageBox.Show("Try again. Please input a valid number of hours.");
+                        clearFields();
                     }
 
                 }
-                //If the user input is not a number, the program tells them input a number next time. 
+                //If the user input is not a number, the program tells them input a number next time, sets focus to the textbox, and clears all fields. 
                 else
                 {
-                    MessageBox.Show("Please enter a number.");
-                    totalAmountDueLabel.Text = " ";
+                    MessageBox.Show("Try again. Please enter a number.");
+                    clearFields();
                 }
             }
 
