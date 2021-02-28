@@ -19,38 +19,10 @@ namespace Assignment2
         const int PACKAGE_A_HOURS = 10, PACKAGE_B_HOURS = 20, PACKAGE_A_ADDITIONAL_HOURS = 2, PACKAGE_B_ADDITIONAL_HOURS = 1;
         const double NONPROFIT_DISCOUNT = .80, PACKAGE_A_MONTHLY_FEE = 9.95, PACKAGE_B_MONTHLY_FEE = 14.95, PACKAGE_C_MONTHLY_FEE = 19.95;
         double hoursUsed, totalCost;
-        private void exitButton_Click(object sender, EventArgs e)
+        private void calculateButton_Click(object sender, EventArgs e)
         {
-            closeApplication();
-        }
-
-        private void closeApplication()
-        {
-            try
-            {
-                Application.Exit();
-            }
-            catch
-            {
-                MessageBox.Show("Error closing the application.");
-            }
-        }
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-                clearFields();
-        }
-        private void clearFields()
-        {
-            try
-            {
-                totalAmountDueLabel.Text = " "; hoursUsedLabel.Text = " ";
-                hoursUsed = 0; totalCost = 0;
-                hoursUsedLabel.Focus();
-            }
-            catch
-            {
-                MessageBox.Show("Error clearing the fields and values");
-            }
+                userInputValidation();
+                calculateTotalDue();
         }
         private void userInputValidation()
         {
@@ -76,11 +48,6 @@ namespace Assignment2
                 }
             }
 
-        }
-        private void calculateButton_Click(object sender, EventArgs e)
-        {
-                userInputValidation();
-                calculateTotalDue();
         }
         private void calculateTotalDue()
         {
@@ -162,6 +129,49 @@ namespace Assignment2
             catch
             {
                 MessageBox.Show("Error calculating the data.");
+            }
+        }
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            closeApplication();
+        }
+        private void closeApplication()
+        {
+            try
+            {
+                Application.Exit();
+            }
+            catch
+            {
+                MessageBox.Show("Error closing the application.");
+            }
+        }
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            clearFields();
+            clearVariables();
+        }
+        private void clearFields()
+        {
+            try
+            {
+                totalAmountDueLabel.Text = " "; hoursUsedLabel.Text = " ";
+                hoursUsedLabel.Focus();
+            }
+            catch
+            {
+                MessageBox.Show("Error clearing the fields and values");
+            }
+        }
+        private void clearVariables()
+        {
+            try
+            {
+                hoursUsed = 0; totalCost = 0;
+            }
+            catch
+            {
+                MessageBox.Show("Error clearing variables.");
             }
         }
     }
