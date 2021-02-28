@@ -12,6 +12,7 @@ namespace Assignment2
 {
     public partial class Form1 : Form
     {
+        //Coded by Tyler Ingram
         public Form1()
         {
             InitializeComponent();
