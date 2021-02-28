@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{160B0524-8EDB-49F8-BD9B-D3BF08C9CFD0}</ProjectGuid>
+    <ProjectGuid>{F593E4BE-D00D-4CF7-BC3E-BFF653A9E723}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Exam1IngramTyler</RootNamespace>
-    <AssemblyName>Exam1IngramTyler</AssemblyName>
+    <RootNamespace>Assignment3</RootNamespace>
+    <AssemblyName>Assignment3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

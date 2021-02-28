@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Exam1IngramTyler.Properties
+namespace Assignment3.Properties
 {
 
 
