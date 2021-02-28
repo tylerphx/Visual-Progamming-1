@@ -18,6 +18,7 @@ namespace Assignment3
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Written by Tyler Ingram
             //Adds the items to the list when the program is run
             workShopListBox.Items.Add("Handling Stress");
             workShopListBox.Items.Add("Time Management");
@@ -39,6 +40,8 @@ namespace Assignment3
             HOW_TO_INTERVIEW_REGISTRATION_FEE = 395, HOW_TO_INTERVIEW_DAYS = 1,
             AUSTIN_LODGING_DAILY_FEE = 95, CHICAGO_LODGING_DAILY_FEE = 125, DALLAS_LODGING_DAILY_FEE = 110, ORLANDO_LODGING_DAILY_FEE = 100, 
             PHOENIX_LODGING_DAILY_FEE = 92, RALEIGH_LODGING_DAILY_FEE = 90;
+        int timeManagementLodgingTotal = 0, supervisionSkillsLodgingTotal = 0, handlingStressLodgingTotal = 0, negotiationLodgingTotal = 0, howToInterviewLodgingTotal = 0, totalCosts = 0, x = 0;
+
         private void addWorkShopButton_Click(object sender, EventArgs e)
         {
             CostsListBoxTotal();
@@ -53,37 +56,37 @@ namespace Assignment3
                 if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 0)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 1)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 2)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = DALLAS_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = DALLAS_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 3)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 4)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 else  if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 5)
                 {
                     costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    int handlingStressLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
+                    handlingStressLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
                     costListBox.Items.Add(handlingStressLodgingTotal);
                 }
                 //Calculates the total for the time management workshop and for any locations they choose, 
@@ -91,37 +94,37 @@ namespace Assignment3
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 0)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = AUSTIN_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = AUSTIN_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 1)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = CHICAGO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = CHICAGO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 2)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = DALLAS_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = DALLAS_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 3)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = ORLANDO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = ORLANDO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 4)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = PHOENIX_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = PHOENIX_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 5)
                 {
                     costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    int timeManagementLodgingTotal = RALEIGH_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
+                    timeManagementLodgingTotal = RALEIGH_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
                     costListBox.Items.Add(timeManagementLodgingTotal);
                 }
                 //Calculates the total for the supervision skills workshop and for any locations they choose, 
@@ -129,37 +132,37 @@ namespace Assignment3
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 0)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = AUSTIN_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = AUSTIN_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 1)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = CHICAGO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = CHICAGO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 } 
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 2)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = DALLAS_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = DALLAS_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 3)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = ORLANDO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = ORLANDO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 4)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = PHOENIX_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = PHOENIX_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 5)
                 {
                     costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    int supervisionSkillsLodgingTotal = RALEIGH_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
+                    supervisionSkillsLodgingTotal = RALEIGH_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
                     costListBox.Items.Add(supervisionSkillsLodgingTotal);
                 }
                 //Calculates the total for the Negotation workshop and for any locations they choose, 
@@ -167,37 +170,37 @@ namespace Assignment3
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 0)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = AUSTIN_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = AUSTIN_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 1)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = CHICAGO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = CHICAGO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 2)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = DALLAS_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = DALLAS_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 3)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = ORLANDO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = ORLANDO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 4)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = PHOENIX_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = PHOENIX_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 5)
                 {
                     costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    int negotiationLodgingTotal = RALEIGH_LODGING_DAILY_FEE * NEGOTATION_DAYS;
+                    negotiationLodgingTotal = RALEIGH_LODGING_DAILY_FEE * NEGOTATION_DAYS;
                     costListBox.Items.Add(negotiationLodgingTotal);
                 }
                 //Calculates the total for the How to Interview workshop and for any locations they choose, 
@@ -205,37 +208,37 @@ namespace Assignment3
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 0)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 1)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 2)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = DALLAS_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = DALLAS_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 3)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 4)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
                 else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 5)
                 {
                     costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    int howToInterviewLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
+                    howToInterviewLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
                     costListBox.Items.Add(howToInterviewLodgingTotal);
                 }
             }
@@ -246,7 +249,6 @@ namespace Assignment3
         }
         private void calculateTotal()
         {
-            int totalCosts = 0, x = 0;
             int countOfCostsListbox = costListBox.Items.Count;
             for (int i = 0; i<countOfCostsListbox; i=i+1)
             {
@@ -256,12 +258,12 @@ namespace Assignment3
                 {
                     outputLabel.Text = totalCosts.ToString("c");
                 }
-            }
-              
+            }    
         }
         private void resetButton_Click(object sender, EventArgs e)
         {
             ResetApplication();
+            ClearFields();
         }
         private void ResetApplication()
         {
@@ -269,6 +271,10 @@ namespace Assignment3
             workShopListBox.ClearSelected();
             locationListBox.ClearSelected();
             outputLabel.Text = " ";
+        }
+        private void ClearFields()
+        {
+            timeManagementLodgingTotal = 0; supervisionSkillsLodgingTotal = 0; handlingStressLodgingTotal = 0;  negotiationLodgingTotal = 0;  howToInterviewLodgingTotal = 0; totalCosts = 0; x = 0;
         }
         private void exitButton_Click(object sender, EventArgs e)
         {
