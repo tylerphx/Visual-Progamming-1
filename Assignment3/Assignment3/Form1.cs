@@ -13,252 +13,210 @@ namespace Assignment3
     public partial class Form1 : Form
     {
         public Form1()
-        {
+    {
             InitializeComponent();
-        }
-        private void Form1_Load(object sender, EventArgs e)
+    }
+        //Written by Tyler Ingram in 2020
+        //Adds the items to listboxes when the program is run
+        //Not using constants for efficiency  
+        double wshopcost = 0, lodge = 0, subtotal = 0, grandtotal =0;
+        string hostCity, workshop; 
+    private void addWorkShopButton_Click(object sender, EventArgs e)
+    {
+            Process();
+    }
+    private void Process()
         {
-            //Written by Tyler Ingram
-            //Adds the items to the list when the program is run
-            workShopListBox.Items.Add("Handling Stress");
-            workShopListBox.Items.Add("Time Management");
-            workShopListBox.Items.Add("Supervision Skills");
-            workShopListBox.Items.Add("Negotiation");
-            workShopListBox.Items.Add("How to Interview");
-            locationListBox.Items.Add("Austin");
-            locationListBox.Items.Add("Chicago");
-            locationListBox.Items.Add("Dallas");
-            locationListBox.Items.Add("Orlando");
-            locationListBox.Items.Add("Phoenix");
-            locationListBox.Items.Add("Raleigh");
-        }
-        const int //declaring all the constants
-            HANDLING_STRESS_REGISTRATION_FEE = 595, HANDLING_STRESS_DAYS = 3,
-            TIME_MANAGEMENT_REGISTRATION_FEE = 695, TIME_MANAGEMENT_DAYS = 3,
-            SUPERVISION_SKILLS_REGISTRATION_FEE = 995, SUPERVISION_SKILLS_DAYS = 3,
-            NEGOTATION_REGISTRATION_FEE = 1295, NEGOTATION_DAYS = 3,
-            HOW_TO_INTERVIEW_REGISTRATION_FEE = 395, HOW_TO_INTERVIEW_DAYS = 1,
-            AUSTIN_LODGING_DAILY_FEE = 95, CHICAGO_LODGING_DAILY_FEE = 125, DALLAS_LODGING_DAILY_FEE = 110, ORLANDO_LODGING_DAILY_FEE = 100, 
-            PHOENIX_LODGING_DAILY_FEE = 92, RALEIGH_LODGING_DAILY_FEE = 90;
-        int timeManagementLodgingTotal = 0, supervisionSkillsLodgingTotal = 0, handlingStressLodgingTotal = 0, negotiationLodgingTotal = 0, howToInterviewLodgingTotal = 0, totalCosts = 0, x = 0;
-
-        private void addWorkShopButton_Click(object sender, EventArgs e)
+            //Calculates the total for the handling stress workshop and for any locations they choose
+            //and this is added to the costs textbox. Does this for every workshop.
+                    if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 0)
+                    {
+                        wshopcost = 595;
+                        lodge = 3 * 95;
+                    }
+                    else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 1)
+                    {
+                        wshopcost = 595;
+                        lodge = 125 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 2)
+                    {
+                        wshopcost = 595;
+                        lodge = 110 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 3)
+                    {
+                        wshopcost = 595;
+                        lodge = 100 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 4)
+                    {
+                        wshopcost = 595;
+                        lodge = 92 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 5)
+                    {
+                        wshopcost = 595;
+                        lodge = 90 * 3;
+                    }
+                    //Calculates the total for the time management workshop and for any locations they choose, 
+                    //and this is added to the costs textbox 
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 0)
+                    {
+                        wshopcost = 695;
+                        lodge = 95 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 1)
+                    {
+                        wshopcost = 695;
+                        lodge = 125 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 2)
+                    {
+                        wshopcost = 695;
+                        lodge = 110 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 3)
+                    {
+                        wshopcost = 695;
+                        lodge = 125 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 4)
+                    {
+                        wshopcost = 695;
+                        lodge = 92 * 3;
+                    }
+                    else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 5)
+                    {
+                        wshopcost = 695;
+                        lodge = 90 * 3;
+                       
+                    }
+                    //Calculates the total for the supervision skills workshop and for any locations they choose, 
+                    //and this is added to the costs textbox 
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 0)
+                    {
+                        wshopcost = 995;
+                        lodge = 95 * 3;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 1)
+                    {
+                        wshopcost = 995;
+                        lodge = 125 * 3;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 2)
+                    {
+                        wshopcost = 995;
+                        lodge = 110 * 3;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 3)
+                    {
+                        wshopcost = 995;
+                        lodge = 100 * 3;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 4)
+                    {
+                        wshopcost = 995;
+                        lodge = 92 * 3;
+                       
+                    }
+                    else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 5)
+                    {
+                        wshopcost = 995;
+                        lodge = 90 * 3;
+                        
+                    }
+                    //Calculates the total for the Negotation workshop and for any locations they choose, 
+                    //and this is added to the  costs textbox 
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 0)
+                    {
+                        wshopcost = 1295;
+                        lodge = 95 * 5;
+                    }
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 1)
+                    {
+                        wshopcost = 1295;
+                        lodge = 125 * 5;
+                       
+                    }
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 2)
+                    {
+                        wshopcost = 1295;
+                        lodge = 110 * 5;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 3)
+                    {
+                        wshopcost = 1295;
+                        lodge = 100 * 5;
+                    }
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 4)
+                    {
+                        wshopcost = 1295;
+                        lodge = 92 * 5;
+                       
+                    }
+                    else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 5)
+                    {
+                        wshopcost = 1295;
+                        lodge = 90 * 5;
+                       
+                    }
+                    //Calculates the total for the How to Interview workshop and for any locations they choose, 
+                    //and this is added to the list of costs textbox 
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 0)
+                    {
+                        wshopcost = 395;
+                        lodge = 95 * 1;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 1)
+                    {
+                        wshopcost = 395;
+                        lodge = 125 * 1;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 2)
+                    {
+                        wshopcost = 395;
+                        lodge = 110 * 1;
+                       
+                    }
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 3)
+                    {
+                        wshopcost = 395;
+                        lodge = 100 * 1;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 4)
+                    {
+                        wshopcost = 395;
+                        lodge = 92 * 1;
+                        
+                    }
+                    else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 5)
+                    {
+                        wshopcost = 395;
+                        lodge = 90 * 1;
+                       
+                    }
+            hostCity = locationListBox.SelectedItem.ToString();
+            workshop = workShopListBox.SelectedItem.ToString();
+            subtotal = wshopcost + lodge;
+            grandtotal = grandtotal + subtotal;
+            costListBox.Items.Add(workshop + "\t" + hostCity + "\t" + subtotal.ToString("C"));     
+    }
+    private void calculateTotalButton_Click(object sender, EventArgs e)
         {
-            CostsListBoxTotal();
+            OutputGrandTotal();
         }
-        private void CostsListBoxTotal()
+    private void OutputGrandTotal()
         {
-            //Calculates the total for the handling stress workshop and for any locations they choose, 
-            //and this is added to the costs textbox 
-            //Note that it will show two charges in the list box, one for the registration and one for the lodging. 
-            //I wanted it to be this way so the customer understands the payment in detail. 
-            {
-                if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 0)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 1)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 2)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = DALLAS_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 3)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 4)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                else  if (workShopListBox.SelectedIndex == 0 && locationListBox.SelectedIndex == 5)
-                {
-                    costListBox.Items.Add(HANDLING_STRESS_REGISTRATION_FEE);
-                    handlingStressLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HANDLING_STRESS_DAYS;
-                    costListBox.Items.Add(handlingStressLodgingTotal);
-                }
-                //Calculates the total for the time management workshop and for any locations they choose, 
-                //and this is added to the costs textbox 
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 0)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = AUSTIN_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 1)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = CHICAGO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 2)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = DALLAS_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 3)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = ORLANDO_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 4)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = PHOENIX_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 1 && locationListBox.SelectedIndex == 5)
-                {
-                    costListBox.Items.Add(TIME_MANAGEMENT_REGISTRATION_FEE);
-                    timeManagementLodgingTotal = RALEIGH_LODGING_DAILY_FEE * TIME_MANAGEMENT_DAYS;
-                    costListBox.Items.Add(timeManagementLodgingTotal);
-                }
-                //Calculates the total for the supervision skills workshop and for any locations they choose, 
-                //and this is added to the costs textbox 
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 0)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = AUSTIN_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 1)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = CHICAGO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                } 
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 2)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = DALLAS_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 3)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = ORLANDO_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 4)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = PHOENIX_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 2 && locationListBox.SelectedIndex == 5)
-                {
-                    costListBox.Items.Add(SUPERVISION_SKILLS_REGISTRATION_FEE);
-                    supervisionSkillsLodgingTotal = RALEIGH_LODGING_DAILY_FEE * SUPERVISION_SKILLS_DAYS;
-                    costListBox.Items.Add(supervisionSkillsLodgingTotal);
-                }
-                //Calculates the total for the Negotation workshop and for any locations they choose, 
-                //and this is added to the  costs textbox 
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 0)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = AUSTIN_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 1)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = CHICAGO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 2)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = DALLAS_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 3)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = ORLANDO_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 4)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = PHOENIX_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 3 && locationListBox.SelectedIndex == 5)
-                {
-                    costListBox.Items.Add(NEGOTATION_REGISTRATION_FEE);
-                    negotiationLodgingTotal = RALEIGH_LODGING_DAILY_FEE * NEGOTATION_DAYS;
-                    costListBox.Items.Add(negotiationLodgingTotal);
-                }
-                //Calculates the total for the How to Interview workshop and for any locations they choose, 
-                //and this is added to the list of costs textbox 
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 0)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = AUSTIN_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 1)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = CHICAGO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 2)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = DALLAS_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 3)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = ORLANDO_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 4)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = PHOENIX_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-                else if (workShopListBox.SelectedIndex == 4 && locationListBox.SelectedIndex == 5)
-                {
-                    costListBox.Items.Add(HOW_TO_INTERVIEW_REGISTRATION_FEE);
-                    howToInterviewLodgingTotal = RALEIGH_LODGING_DAILY_FEE * HOW_TO_INTERVIEW_DAYS;
-                    costListBox.Items.Add(howToInterviewLodgingTotal);
-                }
-            }
-        }
-        private void calculateTotalButton_Click(object sender, EventArgs e)
-        {
-            calculateTotal();
-        }
-        private void calculateTotal()
-        {
-            int countOfCostsListbox = costListBox.Items.Count;
-            for (int i = 0; i<countOfCostsListbox; i=i+1)
-            {
-                totalCosts = totalCosts + int.Parse(costListBox.Items[i].ToString());
-                x++;
-                if (x>=countOfCostsListbox)
-                {
-                    outputLabel.Text = totalCosts.ToString("c");
-                }
-            }    
+            outputLabel.Text = grandtotal.ToString("c");
         }
         private void resetButton_Click(object sender, EventArgs e)
         {
@@ -267,14 +225,13 @@ namespace Assignment3
         }
         private void ResetApplication()
         {
-            costListBox.Items.Clear();
-            workShopListBox.ClearSelected();
             locationListBox.ClearSelected();
-            outputLabel.Text = " ";
+            workShopListBox.ClearSelected();
         }
         private void ClearFields()
         {
-            timeManagementLodgingTotal = 0; supervisionSkillsLodgingTotal = 0; handlingStressLodgingTotal = 0;  negotiationLodgingTotal = 0;  howToInterviewLodgingTotal = 0; totalCosts = 0; x = 0;
+            outputLabel.Text = "";
+            wshopcost = 0; lodge = 0; subtotal = 0; grandtotal = 0; 
         }
         private void exitButton_Click(object sender, EventArgs e)
         {

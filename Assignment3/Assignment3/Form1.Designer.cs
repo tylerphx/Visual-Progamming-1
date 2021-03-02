@@ -40,16 +40,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 164);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(109, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Total Cost:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // outputLabel
             // 
@@ -102,25 +104,38 @@
             // workShopListBox
             // 
             this.workShopListBox.FormattingEnabled = true;
+            this.workShopListBox.Items.AddRange(new object[] {
+            "Handling Stress",
+            "Time Management",
+            "Supervision Skills",
+            "Negotiation",
+            "How to Interview"});
             this.workShopListBox.Location = new System.Drawing.Point(25, 40);
             this.workShopListBox.Name = "workShopListBox";
-            this.workShopListBox.Size = new System.Drawing.Size(120, 95);
+            this.workShopListBox.Size = new System.Drawing.Size(104, 108);
             this.workShopListBox.TabIndex = 8;
             // 
             // locationListBox
             // 
             this.locationListBox.FormattingEnabled = true;
-            this.locationListBox.Location = new System.Drawing.Point(184, 40);
+            this.locationListBox.Items.AddRange(new object[] {
+            "Austin",
+            "Chicago",
+            "Dallas",
+            "Orlando",
+            "Phoenix",
+            "Raleigh"});
+            this.locationListBox.Location = new System.Drawing.Point(145, 40);
             this.locationListBox.Name = "locationListBox";
-            this.locationListBox.Size = new System.Drawing.Size(120, 95);
+            this.locationListBox.Size = new System.Drawing.Size(88, 108);
             this.locationListBox.TabIndex = 9;
             // 
             // costListBox
             // 
             this.costListBox.FormattingEnabled = true;
-            this.costListBox.Location = new System.Drawing.Point(339, 40);
+            this.costListBox.Location = new System.Drawing.Point(251, 40);
             this.costListBox.Name = "costListBox";
-            this.costListBox.Size = new System.Drawing.Size(120, 95);
+            this.costListBox.Size = new System.Drawing.Size(226, 108);
             this.costListBox.TabIndex = 10;
             // 
             // label2
@@ -135,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 24);
+            this.label3.Location = new System.Drawing.Point(142, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 12;
@@ -144,17 +159,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(336, 24);
+            this.label4.Location = new System.Drawing.Point(248, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(121, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "List of Costs";
+            this.label4.Text = "Workshop and Location";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(439, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Cost";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 282);
+            this.ClientSize = new System.Drawing.Size(502, 282);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -169,7 +194,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +212,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
