@@ -95,7 +95,7 @@ namespace Exam2
         }
         private void ClearFields()
         {
-
+            return; 
         }
         private void ClearVariables()
         {
